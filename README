@@ -1,0 +1,14 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3990
+
+DESCRIPTION
+This plugin defines movement commands to go to a task or TODO marker embedded
+in the file, like this:
+    // TODO: Check the return code from the frobnicator.
+
+RELATED WORKS
+To get a list of all tasks and TODO markers in the current file or project,
+you can use the companion GrepTasks.vim plugin (vimscript #0000).
+
+USAGE
+]t			Go to [count] next start of a task or TODO marker.
+[t			Go to [count] previous start of a task or TODO marker.

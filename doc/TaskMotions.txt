@@ -1,0 +1,88 @@
+*TaskMotions.txt*       Motions to task and TODO markers.
+
+			TASK MOTIONS    by Ingo Karkat
+							     *TaskMotions.vim*
+description			|TaskMotions-description|
+usage				|TaskMotions-usage|
+installation			|TaskMotions-installation|
+configuration			|TaskMotions-configuration|
+limitations			|TaskMotions-limitations|
+known problems			|TaskMotions-known-problems|
+todo				|TaskMotions-todo|
+history				|TaskMotions-history|
+
+==============================================================================
+DESCRIPTION					     *TaskMotions-description*
+
+This plugin defines movement commands to go to a task or TODO marker embedded
+in the file, like this:
+    // TODO: Check the return code from the frobnicator. ~
+
+RELATED WORKS								     *
+
+To get a list of all tasks and TODO markers in the current file or project,
+you can use the companion |GrepTasks.vim| plugin (vimscript #0000).
+
+==============================================================================
+USAGE							   *TaskMotions-usage*
+					 *]t* *[t* *v_]t* *v_[t* *o_]t* *o_[t*
+]t			Go to [count] next start of a task or TODO marker.
+[t			Go to [count] previous start of a task or TODO marker.
+
+
+==============================================================================
+INSTALLATION					    *TaskMotions-installation*
+
+This script is packaged as a |vimball|. If you have the "gunzip" decompressor
+in your PATH, simply edit the *.vba.gz package in Vim; otherwise, decompress
+the archive first, e.g. using WinZip. Inside Vim, install by sourcing the
+vimball or via the |:UseVimball| command. >
+    vim TaskMotions.vba.gz
+    :so %
+To uninstall, use the |:RmVimball| command.
+
+DEPENDENCIES					    *TaskMotions-dependencies*
+
+- Requires Vim 7.0 or higher.
+- Requires the CountJump plugin (vimscript #3130).
+
+==============================================================================
+CONFIGURATION					   *TaskMotions-configuration*
+
+For a permanent configuration, put the following commands into your |vimrc|:
+
+						       *g:TaskMotions_Pattern*
+Tasks and TODO markers are defined by a regular expression. Change it via: >
+    let g:TaskMotions_Pattern = '\<TODO:'
+<
+						       *g:TaskMotions_Mapping*
+To change the default mappings from ]t to ]x, use: >
+    let g:TaskMotions_Mapping = 'x'
+To also change the [ / ] prefix to something else, follow the instructions for
+|CountJump-remap-motions|. (This requires CountJump 1.60.)
+
+==============================================================================
+LIMITATIONS					     *TaskMotions-limitations*
+
+KNOWN PROBLEMS					  *TaskMotions-known-problems*
+
+TODO							    *TaskMotions-todo*
+
+IDEAS							   *TaskMotions-ideas*
+
+==============================================================================
+HISTORY							 *TaskMotions-history*
+
+1.00	28-Mar-2012
+First published version.
+
+0.01	19-Mar-2012
+Started development.
+
+==============================================================================
+Copyright: (C) 2012 Ingo Karkat
+The VIM LICENSE applies to this script; see |copyright|.
+
+Maintainer:	Ingo Karkat <ingo@karkat.de>
+==============================================================================
+ vim:tw=78:ts=8:ft=help:norl:
