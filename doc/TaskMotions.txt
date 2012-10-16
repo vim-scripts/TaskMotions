@@ -21,7 +21,7 @@ in the file, like this:
 RELATED WORKS								     *
 
 To get a list of all tasks and TODO markers in the current file or project,
-you can use the companion |GrepTasks.vim| plugin (vimscript #0000).
+you can use the companion |GrepTasks.vim| plugin (vimscript #4196).
 
 ==============================================================================
 USAGE							   *TaskMotions-usage*
@@ -34,17 +34,17 @@ USAGE							   *TaskMotions-usage*
 INSTALLATION					    *TaskMotions-installation*
 
 This script is packaged as a |vimball|. If you have the "gunzip" decompressor
-in your PATH, simply edit the *.vba.gz package in Vim; otherwise, decompress
+in your PATH, simply edit the *.vmb.gz package in Vim; otherwise, decompress
 the archive first, e.g. using WinZip. Inside Vim, install by sourcing the
 vimball or via the |:UseVimball| command. >
-    vim TaskMotions.vba.gz
+    vim TaskMotions*.vmb.gz
     :so %
 To uninstall, use the |:RmVimball| command.
 
 DEPENDENCIES					    *TaskMotions-dependencies*
 
 - Requires Vim 7.0 or higher.
-- Requires the CountJump plugin (vimscript #3130).
+- Requires the CountJump plugin (vimscript #3130), version 1.81 or higher.
 
 ==============================================================================
 CONFIGURATION					   *TaskMotions-configuration*
@@ -55,11 +55,11 @@ For a permanent configuration, put the following commands into your |vimrc|:
 Tasks and TODO markers are defined by a regular expression. Change it via: >
     let g:TaskMotions_Pattern = '\<TODO:'
 <
-						       *g:TaskMotions_Mapping*
+							   *TaskMotions-remap*
 To change the default mappings from ]t to ]x, use: >
     let g:TaskMotions_Mapping = 'x'
 To also change the [ / ] prefix to something else, follow the instructions for
-|CountJump-remap-motions|. (This requires CountJump 1.60.)
+|CountJump-remap-motions|.
 
 ==============================================================================
 LIMITATIONS					     *TaskMotions-limitations*
@@ -72,6 +72,10 @@ IDEAS							   *TaskMotions-ideas*
 
 ==============================================================================
 HISTORY							 *TaskMotions-history*
+
+1.01	16-Oct-2012
+Wrap around search when 'wrapscan' is set.
+This requires CountJump version 1.81.
 
 1.00	28-Mar-2012
 First published version.

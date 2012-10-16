@@ -9,6 +9,8 @@
 " Maintainer:	Ingo Karkat <ingo@karkat.de>
 "
 " REVISION	DATE		REMARKS
+"   1.01.002	16-Oct-2012	Wrap around search when 'wrapscan' is set.
+"				This requires CountJump version 1.81.
 "   1.00.001	28-Mar-2012	Allow remapping.
 "	001	19-Mar-2012	file creation
 
@@ -31,6 +33,6 @@ endif
 
 "- mappings --------------------------------------------------------------------
 
-call CountJump#Motion#MakeBracketMotion('', g:TaskMotions_Mapping, '', g:TaskMotions_Pattern, '', 0)
+call CountJump#Motion#MakeBracketMotion('', g:TaskMotions_Mapping, '', g:TaskMotions_Pattern, '', 0, 'nov', 'task search')
 
 " vim: set ts=8 sts=4 sw=4 noexpandtab ff=unix fdm=syntax :
